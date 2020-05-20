@@ -2,13 +2,14 @@ package terminal;
 
 public class Tester {
 
-	public Tester() {
-		// TODO Auto-generated constructor stub
+	public Tester() 
+	{
+		
 	}
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+	public static void main(String[] args) 
+	{
+		
 	}
 
 }
