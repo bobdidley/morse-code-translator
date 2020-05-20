@@ -14,19 +14,21 @@ public class Alphabet {
 	
 	public Alphabet() 
 	{
-		CodeInstantiate();
+		setCode();
 	}
 	
-	private void CodeInstantiate()
+	private void setCode()
 	{
 		for(int i = 0; i < MORSE.length && i < ALPHA.length; ++i)
 		{
 			CODE.put(ALPHA[i], MORSE[i]);
-		}
+		} 
 	}
 	
 	public char[] getAlpha() { return ALPHA; }
 	
 	public String[] getMorse() { return MORSE; }
+	
+	public HashMap<Character, String> getCode() { return CODE; }
 
 }
