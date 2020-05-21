@@ -13,7 +13,7 @@ public class Main {
 	
 	public static void loadFiles(String args) throws FileNotFoundException
 	{
-		FileInput load = new FileInput(args, true);
+		//FileInput load = new FileInput(args, true);
 	}
 
 	public static void main(String[] args) throws FileNotFoundException

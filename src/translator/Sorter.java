@@ -1,11 +1,12 @@
 package translator;
 
 import java.util.ArrayList;
+import java.lang.StringBuilder;
 
 public class Sorter {
 
 	private Alphabet alpha = new Alphabet();
-	private ArrayList<String> translation;
+	private String translation;
 	
 	public Sorter() {}
 	
@@ -28,16 +29,18 @@ public class Sorter {
 				}
 			}
 		}
+		System.out.println(toString());
 		return translation;
 	}
 	
 	// sorts and concatenates words into morse code to
 	// be written on output file in FileInput class
-	public ArrayList<String> toMorse(ArrayList<String> words)
+	public String toMorse(ArrayList<String> words)
 	{
 		// SUGGESTION:
 		// add single characters to String then add the word to ArrayList
-		String word = "";
+		// String word = "";
+		StringBuilder word = new StringBuilder("");
 		// searches through ArrayLists
 		for(String t : words)
 		{
@@ -49,12 +52,20 @@ public class Sorter {
 					// comparison
 					if(l == m)
 					{
-						word += alpha.getCode().get(m);
+						// word += alpha.getCode().get(m);
+						// translation = alpha.getCode().get(m);
+						word.append(alpha.getCode().get(m));
 					}
 				}
+				translation = word.toString();
 			}
 		}
+		System.out.println(toString());
 		return translation;
 	}
 	
+	public String toString()
+	{
+		return "Running Sorter";
+	}
 }

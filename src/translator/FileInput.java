@@ -13,13 +13,15 @@ public class FileInput {
 	private FileWriter write;
 	private File in;
 	private File out;
-	private ArrayList<String> words;
-	private ArrayList<String> morse;
+	private ArrayList<String> words = new ArrayList<>();
+	private ArrayList<String> morse = new ArrayList<>();
+	ArrayList<String> translation = new ArrayList<>();
 	
 	public FileInput() {}
 	
 	public FileInput(String input, String output, boolean type) throws IOException
 	{
+		System.out.println(toString());
 		in = new File(input);
 		readFile(in, type);
 		out = new File(output);
@@ -48,6 +50,7 @@ public class FileInput {
 				words.add(read.next());
 			}
 		}
+		System.out.println(toString());
 	}
 	
 	private void writeFile(boolean type) throws IOException
@@ -66,19 +69,22 @@ public class FileInput {
 		// else write letters as Morse Code in output file
 		else
 		{
+			// FIX:
+			// toMorse returns a string, figure how to maneuver around this
 			for(String s : sort.toMorse(words))
 			{
 				write.write(s);
 			}
 		}
+		System.out.println(toString());
 	}
 	
 	// in the case command line is not used then this method is used
-	// returns the translation in an ArrayList to the terminal to print output
+	// returns the translation in an ArrayList to terminal to print output
 	public ArrayList<String> manualInput(String manual, boolean bool)
 	{
-		read = new Scanner(manual);
-		ArrayList<String> translation = null; 
+		read = new Scanner(manual); 
+		// translates morse to english
 		if(bool)
 		{
 			while(read.hasNext())
@@ -87,16 +93,27 @@ public class FileInput {
 				translation = new ArrayList<>(sort.toLetters(words));
 			}
 		}
+		// translates english to morse
 		else
 		{
 			while(read.hasNext())
 			{
-				read.useDelimiter("[^a-zA-Z]");
+				// read.useDelimiter("[^a-zA-Z]");
 				words.add(read.next());
-				translation = new ArrayList<>(sort.toMorse(words));
+				translation.add(sort.toMorse(words));
 			}
 		}
+		
+//		for(String t : translation)
+//		{
+//			System.out.println(t + " ");
+//		}
+		System.out.println(toString());
 		return translation;
 	}
 
+	public String toString()
+	{
+		return "Running FileInput";
+	}
 }
