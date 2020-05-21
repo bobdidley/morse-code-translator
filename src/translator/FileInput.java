@@ -72,5 +72,31 @@ public class FileInput {
 			}
 		}
 	}
+	
+	// in the case command line is not used then this method is used
+	// returns the translation in an ArrayList to the terminal to print output
+	public ArrayList<String> manualInput(String manual, boolean bool)
+	{
+		read = new Scanner(manual);
+		ArrayList<String> translation = null; 
+		if(bool)
+		{
+			while(read.hasNext())
+			{
+				words.add(read.next());
+				translation = new ArrayList<>(sort.toLetters(words));
+			}
+		}
+		else
+		{
+			while(read.hasNext())
+			{
+				read.useDelimiter("[^a-zA-Z]");
+				words.add(read.next());
+				translation = new ArrayList<>(sort.toMorse(words));
+			}
+		}
+		return translation;
+	}
 
 }
