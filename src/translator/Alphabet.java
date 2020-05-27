@@ -4,8 +4,8 @@ import java.util.HashMap;
 
 public class Alphabet {
 
-	private static final char[] ALPHA = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".toCharArray();
-	private static final String[] MORSE = { ".-", "-...", "-.-.", "-..", ".", "..-.", "--.", "....", "..",
+	protected static final char[] ALPHA = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".toCharArray();
+	protected static final String[] MORSE = { ".-", "-...", "-.-.", "-..", ".", "..-.", "--.", "....", "..",
 
 			".---", "-.-", ".-..", "--", "-.", "---", ".--.", "--.-", ".-.", "...", "-", "..-",
 
@@ -15,6 +15,7 @@ public class Alphabet {
 	public Alphabet() 
 	{
 		setCode();
+		System.out.println(CODE);
 	}
 	
 	private void setCode()

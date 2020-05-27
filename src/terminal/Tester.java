@@ -36,40 +36,55 @@ public class Tester {
 
 	public static void userInput()
 	{
-		Sorter sort = new Sorter();
+		System.out.println("Welcome to my Morse Code Translator!"
+				+ "\nThe directory & options are listed below.\n");
+		System.out.println("Directory:");
 		FileInput input = new FileInput();
 		choice = new Scanner(System.in);
 		user = new Scanner(System.in);
-		System.out.println("(m)orse or (e)nglish?");
-		char type = choice.next().charAt(0);
-		if(type == 'm')
+		while(true)
 		{
-			boolean bool = true;
-			System.out.println("Enter Morse code:");
-			String morse = user.nextLine();
-			for(String t : input.manualInput(morse, bool))
+			System.out.println("\nWhich would you like to translate from: (m)orse or (e)nglish?");
+			char type = choice.next().charAt(0);
+			if(type == 'm')
 			{
-				System.out.print(t + " ");
+				boolean bool = true;
+				System.out.println("Enter Morse code:\n"
+						+ "(Seperate letters with spaces & use / to separate words)");
+				String morse = user.nextLine();
+				// System.out.println(input.manualInput(morse, bool));
+				System.out.println("Translation of \"" + morse + "\":");
+				for(String t : input.manualInput(morse, bool))
+				{
+					System.out.print(t + " ");
+				}
+			}
+			else if(type == 'e')
+			{
+				boolean bool = false;
+				System.out.println("Enter English:");
+				String english = user.nextLine().toUpperCase();
+				// ArrayList<String> translation = new ArrayList<>();
+				
+				// System.out.println(input.manualInput(english, bool));
+				System.out.println("Translation of \"" + english + "\":\n");
+				for(String t : input.manualInput(english, bool))
+				{
+					System.out.print(t + " ");
+				}
+			}
+			else
+			{
+				System.out.println("Wrong input");
+			}
+			
+			System.out.println("\n\nWould you like to translate something else? (y/n)");
+			if(choice.next().charAt(0) == 'n')
+			{
+				System.out.println("Closing program");
+				break;
 			}
 		}
-		else if(type == 'e')
-		{
-			boolean bool = false;
-			System.out.println("Enter English:");
-			String english = user.nextLine();
-			ArrayList<String> translation = new ArrayList<>();
-			
-			System.out.println(input.manualInput(english, bool));
-//			for(String t : input.manualInput(english, bool))
-//			{
-//				System.out.print(t + " ");
-//			}
-		}
-		else
-		{
-			System.out.println("Wrong input");
-		}
-		
 	}
 	
 	public static void main(String[] args) throws FileNotFoundException
@@ -80,6 +95,5 @@ public class Tester {
 		
 		userInput();
 	}
-
 	
 }

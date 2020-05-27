@@ -5,29 +5,32 @@ import java.lang.StringBuilder;
 
 public class Sorter {
 
-	private Alphabet alpha = new Alphabet();
+	public Alphabet alpha = new Alphabet();
 	private String translation;
 	
 	public Sorter() {}
 	
 	// sorts and concatenates morse letters into words to
 	// be written on output file in FileInput class
-	public ArrayList<String> toLetters(ArrayList<String> morse)
+	public String toLetters(ArrayList<String> morse)
+	// public String toLetters(String morse)
 	{
-		// SUGGESTION:
-		// add single characters to String then add the word to ArrayList
-		String word = "";
+		StringBuilder word = new StringBuilder("");
 		// searches through ArrayLists
 		for(String m : morse)
 		{
-			for(String a : alpha.getCode().values())
+			// adds a space between words
+			if(m.equals("/")) { word.append(" "); }
+			// adds the character to the string
+			for(Character a : alpha.getCode().keySet())
 			{
 				// comparison
-				if(m.contentEquals(a))
+				if(m.contentEquals(alpha.getCode().get(a)))
 				{
-					translation.add(alpha.getCode().get(a));
+					word.append(a);
 				}
 			}
+			translation = word.toString();
 		}
 		System.out.println(toString());
 		return translation;
@@ -35,30 +38,28 @@ public class Sorter {
 	
 	// sorts and concatenates words into morse code to
 	// be written on output file in FileInput class
-	public String toMorse(ArrayList<String> words)
+	// public String toMorse(ArrayList<String> words)
+	public String toMorse(String words)
 	{
-		// SUGGESTION:
-		// add single characters to String then add the word to ArrayList
-		// String word = "";
 		StringBuilder word = new StringBuilder("");
 		// searches through ArrayLists
-		for(String t : words)
+		// for(String t : words)
+		// {
+			// t.toUpperCase();
+		char[] letter = words.toCharArray();
+		for(char l : letter)
 		{
-			char[] letter = t.toCharArray();
-			for(char l : letter)
+			for(Character m : alpha.getCode().keySet())
 			{
-				for(char m : alpha.getCode().keySet())
+				// comparison
+				if((Character) l == m)
 				{
-					// comparison
-					if(l == m)
-					{
-						// word += alpha.getCode().get(m);
-						// translation = alpha.getCode().get(m);
-						word.append(alpha.getCode().get(m));
-					}
+					// word += alpha.getCode().get(m);
+					// translation = alpha.getCode().get(m);
+					word.append(alpha.getCode().get((Character)l) + " ");
 				}
-				translation = word.toString();
 			}
+			translation = word.toString();
 		}
 		System.out.println(toString());
 		return translation;

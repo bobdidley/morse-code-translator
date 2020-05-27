@@ -15,7 +15,6 @@ public class FileInput {
 	private File out;
 	private ArrayList<String> words = new ArrayList<>();
 	private ArrayList<String> morse = new ArrayList<>();
-	ArrayList<String> translation = new ArrayList<>();
 	
 	public FileInput() {}
 	
@@ -83,15 +82,19 @@ public class FileInput {
 	// returns the translation in an ArrayList to terminal to print output
 	public ArrayList<String> manualInput(String manual, boolean bool)
 	{
+		ArrayList<String> translation = new ArrayList<>();
+		manual.toUpperCase();
 		read = new Scanner(manual); 
 		// translates morse to english
 		if(bool)
 		{
 			while(read.hasNext())
 			{
+				// read.useDelimiter("[a-zA-Z]");
 				words.add(read.next());
-				translation = new ArrayList<>(sort.toLetters(words));
+				// translation.add(sort.toLetters(read.next()));
 			}
+			translation.add(sort.toLetters(words));
 		}
 		// translates english to morse
 		else
@@ -99,8 +102,8 @@ public class FileInput {
 			while(read.hasNext())
 			{
 				// read.useDelimiter("[^a-zA-Z]");
-				words.add(read.next());
-				translation.add(sort.toMorse(words));
+				// words.add(read.next());
+				translation.add(sort.toMorse(read.next()));
 			}
 		}
 		
