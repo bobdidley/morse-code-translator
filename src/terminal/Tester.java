@@ -3,7 +3,6 @@ package terminal;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Scanner;
-import java.util.ArrayList;
 
 import translator.*;
 
@@ -44,7 +43,7 @@ public class Tester {
 		user = new Scanner(System.in);
 		while(true)
 		{
-			System.out.println("\nWhich would you like to translate from: (m)orse or (e)nglish?");
+			System.out.println("\nOptions:\nWhich would you like to translate from: (m)orse or (e)nglish?");
 			char type = choice.next().charAt(0);
 			if(type == 'm')
 			{
@@ -64,7 +63,6 @@ public class Tester {
 				boolean bool = false;
 				System.out.println("Enter English:");
 				String english = user.nextLine().toUpperCase();
-				// ArrayList<String> translation = new ArrayList<>();
 				
 				// System.out.println(input.manualInput(english, bool));
 				System.out.println("Translation of \"" + english + "\":\n");

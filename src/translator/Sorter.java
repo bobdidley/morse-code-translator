@@ -17,8 +17,14 @@ public class Sorter {
 	{
 		StringBuilder word = new StringBuilder("");
 		// searches through ArrayLists
-		for(String m : morse)
+		for(int i = 0; i < morse.size(); ++i)
 		{
+			String m = morse.get(i);
+			// SUGGESTION:
+			// Try to clean up hard code with better logic
+//			// enters new line for when long input files are used
+//			if((i % 5 == 0 || i % 5 < 5) && m.equals("/")) { word.append("\n"); }
+			if(i % 5 == 0) { word.append("\n"); }
 			// adds a space between words
 			if(m.equals("/")) { word.append(" "); }
 			// adds the character to the string

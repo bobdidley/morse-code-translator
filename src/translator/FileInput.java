@@ -59,9 +59,9 @@ public class FileInput {
 		// if true write Morse Code elements as letters in output file
 		if(type)
 		{
-			for(String s : sort.toLetters(morse))
+			for(String s : morse)
 			{
-				write.write(s);
+				write.write(sort.toLetters(morse));
 			}
 		}
 		
@@ -70,9 +70,9 @@ public class FileInput {
 		{
 			// FIX:
 			// toMorse returns a string, figure how to maneuver around this
-			for(String s : sort.toMorse(words))
+			for(String s : words)
 			{
-				write.write(s);
+				write.write(sort.toMorse(s));
 			}
 		}
 		System.out.println(toString());
