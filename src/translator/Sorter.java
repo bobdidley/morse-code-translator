@@ -16,17 +16,16 @@ public class Sorter {
 	// public String toLetters(String morse)
 	{
 		StringBuilder word = new StringBuilder("");
+		int count = 0;
 		// searches through ArrayLists
 		for(int i = 0; i < morse.size(); ++i)
 		{
 			String m = morse.get(i);
-			// SUGGESTION:
-			// Try to clean up hard code with better logic
-//			// enters new line for when long input files are used
-//			if((i % 5 == 0 || i % 5 < 5) && m.equals("/")) { word.append("\n"); }
-			// if(i % 5 == 0) { word.append("\n"); }
+			
 			// adds a space between words
-			if(m.equals("/")) { word.append(" "); }
+			if(m.equals("/")) { count++; word.append(" "); }
+			if(count == 30) { count = 0; word.append("\n"); }
+			
 			// adds the character to the string
 			for(Character a : alpha.getCode().keySet())
 			{
