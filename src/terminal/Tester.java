@@ -27,7 +27,7 @@ public class Tester {
 		else { System.out.println("Incorrect boolean input"); }
 		
 		try {
-			FileInput load = new FileInput(inFile, outFile, bool);
+			new FileInput(inFile, outFile, bool);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -88,8 +88,8 @@ public class Tester {
 	public static void main(String[] args) throws FileNotFoundException
 	{
 		// Tester();
-		// try { loadFiles(args[0], args[1], args[2]); }
-		// catch(IOException io) { io.printStackTrace(); }
+//		try { loadFiles(args[0], args[1], args[2]); }
+//		catch(IOException io) { io.printStackTrace(); }
 		
 		userInput();
 	}

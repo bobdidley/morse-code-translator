@@ -25,6 +25,8 @@ public class FileInput {
 		readFile(in, type);
 		out = new File(output);
 		writeFile(type);
+		read.close();
+		write.close();
 	}
 	
 	private void readFile(File input, boolean type) throws IOException
@@ -43,7 +45,7 @@ public class FileInput {
 		// else read letters and store as char variables
 		else
 		{
-			read.useDelimiter("[^a-zA-Z]");
+			read.useDelimiter("[!,'@?//s:;]");
 			while(read.hasNext())
 			{
 				words.add(read.next());
