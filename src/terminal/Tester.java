@@ -87,11 +87,15 @@ public class Tester {
 	
 	public static void main(String[] args) throws FileNotFoundException
 	{
-		// Tester();
-//		try { loadFiles(args[0], args[1], args[2]); }
-//		catch(IOException io) { io.printStackTrace(); }
+		//Tester();
+		try { loadFiles(args[0], args[1], args[2]); }
+		catch(IOException io) { io.printStackTrace(); }
+//		
+//		userInput();
 		
-		userInput();
+		// SUGGESTION:
+		// Run the individual classes and create test cases for them to
+		// to test for any errors in code or output
 	}
 	
 }
