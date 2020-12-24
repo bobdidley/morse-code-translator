@@ -37,7 +37,8 @@ public class Sorter {
 			}
 			translation = word.toString();
 		}
-		System.out.println(toString());
+		// debug
+//		System.out.println(toString());
 		return translation;
 	}
 	
@@ -66,7 +67,8 @@ public class Sorter {
 			}
 			translation = word.toString();
 		}
-		System.out.println(toString());
+		// debug
+//		System.out.println(toString());
 		return translation;
 	}
 	

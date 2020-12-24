@@ -113,7 +113,8 @@ public class FileInput {
 //		{
 //			System.out.println(t + " ");
 //		}
-		System.out.println(toString());
+		// debug
+//		System.out.println(toString());
 		return translation;
 	}
 

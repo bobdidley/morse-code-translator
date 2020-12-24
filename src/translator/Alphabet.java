@@ -15,7 +15,7 @@ public class Alphabet {
 	public Alphabet() 
 	{
 		setCode();
-		System.out.println(CODE);
+//		System.out.println(CODE);
 	}
 	
 	private void setCode()
@@ -31,5 +31,7 @@ public class Alphabet {
 	public String[] getMorse() { return MORSE; }
 	
 	public HashMap<Character, String> getCode() { return CODE; }
+
+	public String toString() { return "Running Alphabet"; }
 
 }
