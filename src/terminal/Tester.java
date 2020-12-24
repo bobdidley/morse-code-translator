@@ -16,7 +16,7 @@ public class Tester {
 //		System.out.println("Morse Code Translator\n\nValues to enter:\nInput file\nOutput file"
 //				+ "\n\"true\" for Morse to English or \"false\" for English to Morse");
 //	}
-	
+
 	public static void loadFiles(String inFile, String outFile, String type) throws FileNotFoundException
 	{
 		boolean bool = false;
@@ -85,13 +85,13 @@ public class Tester {
 		}
 	}
 	
-	public static void main(String[] args) throws FileNotFoundException
+	public static void main(String[] args) // throws FileNotFoundException
 	{
 		//Tester();
-		try { loadFiles(args[0], args[1], args[2]); }
-		catch(IOException io) { io.printStackTrace(); }
+//		try { loadFiles(args[0], args[1], args[2]); }
+//		catch(IOException io) { io.printStackTrace(); }
 //		
-//		userInput();
+		userInput();
 		
 		// SUGGESTION:
 		// Run the individual classes and create test cases for them to
