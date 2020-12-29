@@ -55,17 +55,22 @@ public class Sorter {
 		char[] letter = words.toCharArray();
 		for(char l : letter)
 		{
-			for(Character m : alpha.getCode().keySet())
+//			for(Character m : alpha.getCode().keySet())
+//			{
+//				// comparison
+//				if((Character) l == m)
+//				{
+//					// word += alpha.getCode().get(m);
+//					// translation = alpha.getCode().get(m);
+//					word.append(alpha.getCode().get((Character)l) + " ");
+//				}
+//			}
+
+			if(alpha.getCode().containsKey(l))
 			{
-				// comparison
-				if((Character) l == m)
-				{
-					// word += alpha.getCode().get(m);
-					// translation = alpha.getCode().get(m);
-					word.append(alpha.getCode().get((Character)l) + " ");
-				}
+				word.append(alpha.getCode().get(l) + " ");
 			}
-			translation = word.toString();
+			translation = word.toString() + "/ ";
 		}
 		// debug
 //		System.out.println(toString());
