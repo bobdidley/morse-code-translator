@@ -11,8 +11,8 @@ public class FileInput {
 	private Sorter sort = new Sorter();
 	private Scanner read;
 	private FileWriter write;
-	private File in;
-	private File out;
+//	private File in;
+//	private File out;
 	private ArrayList<String> words = new ArrayList<>();
 	private ArrayList<String> morse = new ArrayList<>();
 	
@@ -20,11 +20,13 @@ public class FileInput {
 	
 	public FileInput(String input, String output, boolean type) throws IOException
 	{
-		System.out.println(toString());
-		in = new File(input);
-		readFile(in, type);
-		out = new File(output);
-		writeFile(type);
+		try {
+			System.out.println(toString());
+			File in = new File(input);
+			readFile(in, type);
+			File out = new File(output);
+			writeFile(out, type);
+		} catch(IOException io) { System.out.println(io.getMessage()); io.printStackTrace(); }
 		read.close();
 		write.close();
 	}
@@ -54,9 +56,9 @@ public class FileInput {
 		System.out.println(toString());
 	}
 	
-	private void writeFile(boolean type) throws IOException
+	private void writeFile(File output, boolean type) throws IOException
 	{
-		write = new FileWriter(out);
+		write = new FileWriter(output);
 		
 		// if true write Morse Code elements as letters in output file
 		if(type)
@@ -85,7 +87,7 @@ public class FileInput {
 	public ArrayList<String> manualInput(String manual, boolean bool)
 	{
 		ArrayList<String> translation = new ArrayList<>();
-		manual.toUpperCase();
+		manual = manual.toUpperCase();
 		read = new Scanner(manual); 
 		// translates morse to english
 		if(bool)

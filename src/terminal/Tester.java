@@ -35,5 +35,8 @@ public class Tester {
 		for(String t : fiTest.manualInput(tran, true)) {
 			System.out.print(t);
 		}
+
+		// TEST: FileInput - text files
+
 	}
 }
