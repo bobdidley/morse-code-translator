@@ -39,8 +39,7 @@ public class Tester {
 //		}
 
 		// TEST: FileInput - text files
-		// FIXME: outputs repeated word entries
-		FileInput morseTest = new FileInput("fiTest_Morse.txt", "test_output.txt", true);
+//		FileInput morseTest = new FileInput("fiTest_Morse.txt", "test_output.txt", true);
 		// FIXME: only translates the first letters of each word
 		FileInput engTest = new FileInput("fiTest_English.txt", "test_output.txt", false);
 	}

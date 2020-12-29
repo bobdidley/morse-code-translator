@@ -70,13 +70,13 @@ public class Sorter {
 			{
 				word.append(alpha.getCode().get(l) + " ");
 			}
-			translation = word.toString() + "/ ";
 		}
+		translation = word.toString() + "/ ";
 		// debug
 //		System.out.println(toString());
 		return translation;
 	}
-	
+
 	public String toString()
 	{
 		return "Running Sorter";

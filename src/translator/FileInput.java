@@ -21,6 +21,7 @@ public class FileInput {
 	public FileInput(String input, String output, boolean type) throws IOException
 	{
 		try {
+			// debug
 			System.out.println(toString());
 			File in = new File(input);
 			readFile(in, type);
@@ -53,6 +54,7 @@ public class FileInput {
 				words.add(read.next());
 			}
 		}
+		// debug
 		System.out.println(toString());
 	}
 	
@@ -63,10 +65,10 @@ public class FileInput {
 		// if true write Morse Code elements as letters in output file
 		if(type)
 		{
-			for(String s : morse)
-			{
+//			for(String s : morse)
+//			{
 				write.write(sort.toLetters(morse));
-			}
+//			}
 		}
 		
 		// else write letters as Morse Code in output file
@@ -79,6 +81,7 @@ public class FileInput {
 				write.write(sort.toMorse(s));
 			}
 		}
+		// debug
 		System.out.println(toString());
 	}
 	
