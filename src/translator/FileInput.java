@@ -65,20 +65,15 @@ public class FileInput {
 		// if true write Morse Code elements as letters in output file
 		if(type)
 		{
-//			for(String s : morse)
-//			{
-				write.write(sort.toLetters(morse));
-//			}
+			write.write(sort.toLetters(morse));
 		}
 		
 		// else write letters as Morse Code in output file
 		else
 		{
-			// FIX:
-			// toMorse returns a string, figure how to maneuver around this
 			for(String s : words)
 			{
-				write.write(sort.toMorse(s));
+				write.write(sort.toMorse(s.toUpperCase()));
 			}
 		}
 		// debug
@@ -113,12 +108,12 @@ public class FileInput {
 				translation.add(sort.toMorse(read.next()));
 			}
 		}
-		
+
+		// debug
 //		for(String t : translation)
 //		{
 //			System.out.println(t + " ");
 //		}
-		// debug
 //		System.out.println(toString());
 		return translation;
 	}
