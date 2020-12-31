@@ -48,7 +48,7 @@ public class FileInput {
 		// else read letters and store as char variables
 		else
 		{
-//			read.useDelimiter("[!,'@?/s:;]");
+//			read.useDelimiter("[!,'@?/:;]");
 			while(read.hasNext())
 			{
 				words.add(read.next());
