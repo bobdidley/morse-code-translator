@@ -15,6 +15,7 @@ public class Sorter {
 	public String toLetters(ArrayList<String> morse)
 	// public String toLetters(String morse)
 	{
+		translation = "";
 		StringBuilder word = new StringBuilder("");
 		int count = 0;
 		// searches through ArrayLists
@@ -47,6 +48,7 @@ public class Sorter {
 	// public String toMorse(ArrayList<String> words)
 	public String toMorse(String words)
 	{
+		translation = "";
 		StringBuilder word = new StringBuilder("");
 		// searches through ArrayLists
 		// for(String t : words)

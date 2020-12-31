@@ -39,7 +39,7 @@ public class Tester {
 //		}
 
 		// TEST: FileInput - text files
-		FileInput morseTest = new FileInput("fiTest_Morse.txt", "test_output.txt", true);
-		FileInput engTest = new FileInput("fiTest_English.txt", "test_output.txt", false);
+//		FileInput morseTest = new FileInput("MCtest1.txt", "test_output.txt", true);
+//		FileInput engTest = new FileInput("MCtest.txt", "test_output.txt", false);
 	}
 }

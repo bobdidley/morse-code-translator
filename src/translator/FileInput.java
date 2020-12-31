@@ -48,7 +48,7 @@ public class FileInput {
 		// else read letters and store as char variables
 		else
 		{
-			read.useDelimiter("[!,'@?/s:;]");
+//			read.useDelimiter("[!,'@?/s:;]");
 			while(read.hasNext())
 			{
 				words.add(read.next());
@@ -85,6 +85,8 @@ public class FileInput {
 	public ArrayList<String> manualInput(String manual, boolean bool)
 	{
 		ArrayList<String> translation = new ArrayList<>();
+		words.clear();
+		morse.clear();
 		manual = manual.toUpperCase();
 		read = new Scanner(manual); 
 		// translates morse to english
